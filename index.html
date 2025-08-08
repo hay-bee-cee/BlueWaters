@@ -310,8 +310,8 @@
             height: 40px;
             border: none;
             border-radius: 50%;
-            background: var(--gradient-primary);
-            color: white;
+            background: var(--gradient-primary) !important;
+            color: #fff !important;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -321,6 +321,12 @@
 
         .play-btn:hover {
             transform: scale(1.1);
+        }
+
+        .play-btn:active,
+        .play-btn:focus {
+            background: var(--gradient-primary) !important;
+            color: #fff !important;
         }
 
         .progress-bar {
@@ -739,7 +745,7 @@ courage in my core
 I’ll carve my own tomorrow 
 through that hard black door
 
-<b>(Instrumental fade out) </b>
+<b>(Fade out) </b>
 
 </pre>
                 </div>
