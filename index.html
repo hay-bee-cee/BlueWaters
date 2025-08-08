@@ -146,13 +146,13 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
@@ -217,7 +217,7 @@
         }
 
         .about-text {
-            font-size: 1.1rem;
+            font-size: 0.98rem;
             line-height: 1.8;
         }
 
@@ -379,25 +379,34 @@
 
         /* Lyrics Section */
         .lyrics-container {
-            max-width: 600px;
-            margin: 30px auto 0;
-            padding: 20px;
+            max-width: 100%;
+            margin: 15px 0 0 0;
+            padding: 12px;
             border-radius: 10px;
             text-align: center;
             display: none;
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 40vh;
+            box-sizing: border-box;
+            word-break: break-word;
+            font-size: 1rem;
         }
 
-        body.light-theme .lyrics-container {
-            background: var(--light-surface);
-        }
+        @media (max-width: 600px) {
+            .lyrics-container {
+                font-size: 0.9rem;
+                max-height: 45vh;
+            }
 
-        body.dark-theme .lyrics-container {
-            background: var(--dark-bg);
+            .lyrics-content {
+                font-size: 0.9rem;
+            }
         }
 
         .lyrics-content {
             line-height: 1.8;
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
 
         body.light-theme .lyrics-content {
@@ -427,6 +436,7 @@
 
         /* Footer */
         .footer {
+            font-size: 0.8rem;
             text-align: center;
             padding: 40px 0;
             border-top: 1px solid rgba(0, 102, 204, 0.2);
@@ -447,15 +457,15 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
 
             .music-grid {
@@ -494,12 +504,12 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About D'ELLEN</h2>
+            <h2 class="section-title">About D'eLLEN</h2>
             <div class="about-content">
                 <div class="artist-image"></div>
                 <p class="about-text">
-                    D'ELLEN is an innovative artist pushing the boundaries of contemporary music. 
-                    With a unique blend of electronic soundscapes and organic melodies, D'ELLEN creates 
+                    D'eLLEN is an innovative artist pushing the boundaries of contemporary music. 
+                    With a unique blend of electronic soundscapes and organic melodies, D'eLLEN creates 
                     immersive experiences that transport listeners to new dimensions of sound. 
                     Based on the concept of "Blue Waters," the music flows like gentle waves, 
                     carrying emotions and stories that resonate with audiences worldwide. 
@@ -520,7 +530,7 @@
                     </div>
                     <div class="music-info">
                         <h3 class="music-title">The Hermit Calls</h3>
-                        <p class="music-artist">D'ELLEN</p>
+                        <p class="music-artist">D'eLLEN</p>
                         <div class="music-player">
                             <audio id="audio-single1" src="music/The Hermit Calls.m4a"></audio>
                             <div class="player-controls">
@@ -529,16 +539,213 @@
                                     <div class="progress-fill" id="progress-single1"></div>
                                 </div>
                                 <div class="time-display">
-                                    <span id="time-single1">0:00 / 3:24</span>
+                                    <span id="time-single1">0:00 / 3:28</span>
                                 </div>
                             </div>
                             <canvas class="visualizer" id="visualizer-single1"></canvas>
                         </div>
                         
-                        <button class="show-lyrics-btn" onclick="toggleLyrics('lyrics-single1')">Show Lyrics</button>
+                        <button class="show-lyrics-btn" onclick="toggleLyrics('lyrics-single1', this)">Show Lyrics</button>
+                        <div class="lyrics-container" id="lyrics-single1">
+        <h4>The Hermit Calls - Lyrics</h4>
+                <div class="lyrics-content"> 
+<pre>
+
+<b>Verse 1: </b>
+Alone upon the mountain high,  
+A lantern lights the quiet sky.  
+Steps are slow, 
+the path unclear,  
+But wisdom whispers, 
+"Hold it near."  
+
+<b>Chorus: </b> 
+The Hermit calls, 
+through shadowed halls,  
+Seek within where silence falls.  
+Light the lantern, 
+find your way,  
+In solitude, 
+the soul will stay.  
+
+<b>Verse 2:</b> 
+No noise to drown the voice inside,  
+The echo of truth you cannot hide.  
+Staff in hand, 
+steady and wise,  
+The journey’s long, 
+but sights are bright. 
+
+<b>Chorus: </b> 
+The Hermit calls, 
+through shadowed halls,  
+Seek within where silence falls.  
+Light the lantern, 
+find your way,  
+In solitude, 
+the soul will stay.  
+
+<b>Bridge: </b>
+Each step revealed, 
+but not the whole,  
+A star to guide the wandering soul.  
+Patience worn like trusted cloak,  
+In quiet nights, 
+the spirit spoke.  
+
+<b>Chorus (repeat): </b> 
+The Hermit calls, 
+through shadowed halls,  
+Seek within where silence falls.  
+Light the lantern, 
+find your way,  
+In solitude, 
+the soul will stay.  
+
+<b>Outro:</b>
+So follow light, 
+though small and dim,  
+The Hermit’s path, 
+your sacred hymn.  
+
+<b>(Instrumental fade out) </b>
+
+</pre>
+                </div>
+            </div>
                     </div>
                 </div>
-                
+        <div class="music-card">
+                    <div class="music-cover">
+                        <img src="images/ChatGPT Image Aug 8, 2025, 10_04_39 AM.png" alt="The Hermit Calls">
+                    </div>
+                    <div class="music-info">
+                        <h3 class="music-title">Hard Black Door</h3>
+                        <p class="music-artist">D'eLLEN</p>
+                        <div class="music-player">
+                            <audio id="audio-single2" src="music/Hard Black Door.m4a"></audio>
+                            <div class="player-controls">
+                                <button class="play-btn" onclick="togglePlay(this, 'single2')">▶</button>
+                                <div class="progress-bar" onclick="seekTo(event, 'single2')">
+                                    <div class="progress-fill" id="progress-single2"></div>
+                                </div>
+                                <div class="time-display">
+                                    <span id="time-single2">0:00 / 3:48</span>
+                                </div>
+                            </div>
+                            <canvas class="visualizer" id="visualizer-single2"></canvas>
+                        </div>
+                        
+                        <button class="show-lyrics-btn" onclick="toggleLyrics('lyrics-single2', this)">Show Lyrics</button>
+                        <div class="lyrics-container" id="lyrics-single2">
+        <h4>Hard Black Door - Lyrics</h4>
+                <div class="lyrics-content"> 
+<pre>
+
+<b>Verse 1: </b>
+I’ve been staring at the shadows, 
+pacing on this wooden floor
+Every heartbeat’s just a whisper 
+of the things I can’t ignore
+Dreams behind a barrier, 
+secrets wrapped in doubt
+But the silence starts to crumble 
+when I finally speak out
+
+<b>Verse 2:</b>
+Hands are trembling in the twilight, 
+yesterday feels far away
+Hope’s a flicker in the darkness, 
+but I’m finding words to say
+Every scar is just a lesson, 
+every fear another key
+To turn the lock that’s holding back 
+the parts I’ve yet to see
+
+<b>Chorus: </b>
+The hard black door, 
+standing in my way
+Trap or invitation, 
+I won’t walk away
+One push forward, 
+courage in my core
+I’ll carve my own tomorrow 
+through that hard black door
+
+<b>Verse 3: </b>
+Midnight voices try to haunt me, 
+doubts I thought I’d left behind
+But each morning brings new sunlight, 
+showing strength I couldn’t find
+Walls I built to keep me safe 
+are cracks that let hope in
+With every stumble forward now, 
+I feel the change begin
+
+<b>(Music break: Instrumental) </b>
+
+<b>Verse 4: </b>
+Memories like shifting shadows, 
+flicker on that painted wood
+I trace old hurts with gentle hands—
+maybe they’ve done some good
+If every ending leads to doors, 
+and every door to more
+Then breaking down this barrier 
+is what my heart was made for
+
+<b>Bridge: </b>
+No more hiding from the thunder, 
+no more running from the rain
+I’ll gather all my pieces 
+and learn to love the pain
+Step by step until I’m sure
+I was made to break this door
+
+
+<b>Chorus (repeat): </b>
+The hard black door, 
+standing in my way
+Trap or invitation, 
+I won’t walk away
+One push forward, 
+courage in my core
+I’ll carve my own tomorrow 
+through that hard black door
+
+<b>Outro: </b>
+On the other side, 
+the world’s a little brighter than before
+And I’m more myself than ever 
+through the hard black door
+
+<b>Chorus (repeat): </b>
+The hard black door, 
+standing in my way
+Trap or invitation, 
+I won’t walk away
+One push forward, 
+courage in my core
+I’ll carve my own tomorrow 
+through that hard black door
+
+<b>Chorus (repeat): </b>
+The hard black door, 
+standing in my way
+Trap or invitation, 
+I won’t walk away
+One push forward, 
+courage in my core
+I’ll carve my own tomorrow 
+through that hard black door
+
+<b>(Fade out slowly with instrumentals) </b>
+
+</pre>
+                </div>
+            </div>
+                    </div>
+                </div>        
                 <div class="music-card">
                     <div class="music-cover">
                         <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Midnight Waves">
@@ -558,28 +765,8 @@
                             </div>
                             <canvas class="visualizer" id="visualizer-single2"></canvas>
                         </div>
-                        <button class="show-lyrics-btn" onclick="toggleLyrics('lyrics-single2')">Show Lyrics</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Lyrics Containers -->
-            <div class="lyrics-container" id="lyrics-single1">
-                <h4>Ocean Dreams - Lyrics</h4>
-                <div class="lyrics-content">
-                    Floating on the endless blue<br>
-                    Waves of light are calling you<br>
-                    Dreams that shimmer in the deep<br>
-                    Secrets that the ocean keeps<br><br>
-                    
-                    Dance with me beneath the stars<br>
-                    Where the water heals all scars<br>
-                    In this moment we are free<br>
-                    Lost in ocean's melody
-                </div>
-            </div>
-            
-            <div class="lyrics-container" id="lyrics-single2">
+                        <button class="show-lyrics-btn" onclick="toggleLyrics('lyrics-single2', this)">Show Lyrics</button>
+                        <div class="lyrics-container" id="lyrics-single2">
                 <h4>Midnight Waves - Lyrics</h4>
                 <div class="lyrics-content">
                     When the moon lights up the shore<br>
@@ -591,6 +778,9 @@
                     Bringing hope for a new day<br>
                     In the darkness we can see<br>
                     All that we're meant to be
+                </div>
+            </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -651,7 +841,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 BLUE WATERS - D'ELLEN Music Label. All rights reserved. | Streaming Only - No Downloads</p>
+            <p>&copy; 2025 BLUE WATERS - D'ELLEN Music Label. All rights reserved.</p>
         </div>
     </footer>
 
@@ -760,15 +950,21 @@
         function initVisualizer(id) {
             const canvas = document.getElementById(`visualizer-${id}`);
             if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvas.offsetWidth;
-            canvas.height = 60;
-            
+
+            // Set canvas width/height to match its CSS/display size
+            function resizeCanvas() {
+                // Use parent width for responsive sizing
+                const parentWidth = canvas.parentElement ? canvas.parentElement.offsetWidth : 300;
+                canvas.width = parentWidth;
+                canvas.height = 60;
+            }
+            resizeCanvas();
+
             playerState[id].visualizer = {
-                ctx: ctx,
+                ctx: canvas.getContext('2d'),
                 canvas: canvas,
-                bars: Array.from({length: 32}, () => Math.random() * 40 + 5)
+                bars: Array.from({length: 32}, () => Math.random() * 40 + 5),
+                resizeCanvas: resizeCanvas
             };
         }
 
@@ -776,35 +972,39 @@
         function updateVisualizer(id) {
             const state = playerState[id];
             if (!state.visualizer || !state.isPlaying) return;
-            
+
             const { ctx, canvas, bars } = state.visualizer;
             const barWidth = canvas.width / bars.length;
-            
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
             // Create gradient
             const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
             gradient.addColorStop(0, '#00ccff');
             gradient.addColorStop(1, '#0066cc');
-            
+
             bars.forEach((bar, i) => {
                 // Animate bars
                 const targetHeight = Math.random() * 40 + 5;
                 bars[i] += (targetHeight - bars[i]) * 0.1;
-                
+
                 const barHeight = bars[i];
                 const x = i * barWidth;
                 const y = canvas.height - barHeight;
-                
+
                 ctx.fillStyle = gradient;
                 ctx.fillRect(x, y, barWidth - 2, barHeight);
             });
+
+            // Keep animating while playing
+            if (state.isPlaying) {
+                requestAnimationFrame(() => updateVisualizer(id));
+            }
         }
 
         // Toggle Lyrics
-        function toggleLyrics(lyricsId) {
+        function toggleLyrics(lyricsId, button) {
             const lyricsContainer = document.getElementById(lyricsId);
-            const button = event.target;
             
             if (lyricsContainer.style.display === 'none' || !lyricsContainer.style.display) {
                 lyricsContainer.style.display = 'block';
@@ -836,13 +1036,11 @@
             });
         });
 
-        // Handle window resize for visualizers
+        // On window resize, update all canvas sizes
         window.addEventListener('resize', () => {
             Object.keys(playerState).forEach(id => {
-                if (playerState[id].visualizer) {
-                    const canvas = playerState[id].visualizer.canvas;
-                    canvas.width = canvas.offsetWidth;
-                    canvas.height = 60;
+                if (playerState[id].visualizer && playerState[id].visualizer.resizeCanvas) {
+                    playerState[id].visualizer.resizeCanvas();
                 }
             });
         });
