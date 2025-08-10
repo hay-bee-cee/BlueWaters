@@ -329,6 +329,31 @@
             color: #fff !important;
         }
 
+        .repeat-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #e6f2fb !important;
+            color: #0066cc !important;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .repeat-btn.active {
+            background: linear-gradient(135deg, #0066cc, #00ccff) !important;
+            color: #fff !important;
+        }
+
+        .repeat-btn:hover {
+            background: #b3e0ff !important;
+            color: #004499 !important;
+        }
+
         .progress-bar {
             flex: 1;
             height: 4px;
@@ -462,6 +487,10 @@
                 display: none;
             }
 
+            .logo {
+                font-size: 1.1rem;
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
             }
@@ -541,6 +570,11 @@
                             <audio id="audio-single1" src="music/The Hermit Calls.m4a"></audio>
                             <div class="player-controls">
                                 <button class="play-btn" onclick="togglePlay(this, 'single1')">▶</button>
+                                <button class="repeat-btn" onclick="toggleRepeat(this, 'single1')" title="Repeat">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4 4v3H2l3.5 4L9 7H7V4H4zm12 12v-3h2l-3.5-4L11 13h2v3h3z" fill="currentColor"/>
+    </svg>
+</button>
                                 <div class="progress-bar" onclick="seekTo(event, 'single1')">
                                     <div class="progress-fill" id="progress-single1"></div>
                                 </div>
@@ -632,6 +666,11 @@ your sacred hymn.
                             <audio id="audio-single2" src="music/Hard Black Door.m4a"></audio>
                             <div class="player-controls">
                                 <button class="play-btn" onclick="togglePlay(this, 'single2')">▶</button>
+                                <button class="repeat-btn" onclick="toggleRepeat(this, 'single2')" title="Repeat">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4 4v3H2l3.5 4L9 7H7V4H4zm12 12v-3h2l-3.5-4L11 13h2v3h3z" fill="currentColor"/>
+    </svg>
+</button>
                                 <div class="progress-bar" onclick="seekTo(event, 'single2')">
                                     <div class="progress-fill" id="progress-single2"></div>
                                 </div>
@@ -764,6 +803,11 @@ through that hard black door
                             <audio id="audio-single3" src="music/Yoni Bliss.m4a"></audio>
                             <div class="player-controls">
                                 <button class="play-btn" onclick="togglePlay(this, 'single3')">▶</button>
+                                <button class="repeat-btn" onclick="toggleRepeat(this, 'single3')" title="Repeat">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4 4v3H2l3.5 4L9 7H7V4H4zm12 12v-3h2l-3.5-4L11 13h2v3h3z" fill="currentColor"/>
+    </svg>
+</button>
                                 <div class="progress-bar" onclick="seekTo(event, 'single3')">
                                     <div class="progress-fill" id="progress-single3"></div>
                                 </div>
@@ -820,6 +864,11 @@ In this space, we all belong
                         <div class="music-player">
                             <div class="player-controls">
                                 <button class="play-btn" onclick="togglePlay(this, 'single2')">▶</button>
+                                <button class="repeat-btn" onclick="toggleRepeat(this, 'single2')" title="Repeat">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4 4v3H2l3.5 4L9 7H7V4H4zm12 12v-3h2l-3.5-4L11 13h2v3h3z" fill="currentColor"/>
+    </svg>
+</button>
                                 <div class="progress-bar" onclick="seekTo(event, 'single2')">
                                     <div class="progress-fill" id="progress-single2"></div>
                                 </div>
@@ -976,6 +1025,15 @@ In this space, we all belong
                 state.isPlaying = true;
                 updateVisualizer(id);
             }
+        }
+
+        // Toggle Repeat
+        function toggleRepeat(button, id) {
+            initPlayer(id);
+            const state = playerState[id];
+            state.repeat = !state.repeat;
+            button.classList.toggle('active', state.repeat);
+            state.audio.loop = !!state.repeat;
         }
 
         // Update Progress Bar
